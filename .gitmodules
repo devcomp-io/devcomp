@@ -4,3 +4,6 @@
 [submodule "services/devcomp/io.devcomp.clone"]
 	path = services/devcomp/io.devcomp.clone
 	url = git@github.com:devcomp-io/clone.devcomp.io.git
+[submodule "services/devcomp/io.devcomp"]
+	path = services/devcomp/io.devcomp
+	url = git@github.com:devcomp-io/devcomp.io.git
