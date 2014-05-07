@@ -9,7 +9,7 @@
         },
         "catalogs": {
             "os-inception": {
-                "uri": "http://pio-catalog.os-inception-i2a83.vm.cadorn.github.pinf.me:8013/catalog/io.pinf.pio/97fe66d65871486776ebe8a40a85620fc4f07103",
+                "uri": "http://pio-catalog.os-inception-i2a83.vm.cadorn.github.pinf.me:8013/catalog/io.pinf.pio/049c3e234924cd8f7ac6c15f991c4f3e9dd6a141",
                 "headers": {
                     "x-auth-code": "37a1043d-596a-4bd5-bf60-6d057b30dec2"
                 }
@@ -53,9 +53,66 @@
                     "token": "{{env.DNSIMPLE_TOKEN}}"
                 }
             }
+        },
+        "pio.catalog": {
+            "catalogs": {
+                "io.devcomp": {
+                    "uuid": "c352b2b8-d9f5-4da3-99af-8452a4e0c568",
+                    "services": [
+                        "devcomp/*"
+                    ],
+                    "config": {
+                        "pio": {
+                            "domain": "",
+                            "serviceRepositoryUri": ""
+                        },
+                        "pio.dns": {
+                            "adapters": {
+                                "dnsimple": null
+                            }
+                        },
+                        "pio.catalog": {
+                            "catalogs": null
+                        }
+                    }
+                }
+            }
         }
     },
     "services": {
+        "0-pio": {
+            "pio.catalog": {
+                "env": {
+                    "PORT": "8102",
+                    "AWS_ACCESS_KEY": "$AWS_ACCESS_KEY",
+                    "AWS_SECRET_KEY": "$AWS_SECRET_KEY"
+                },
+                "config": {
+                    "server": {
+                        "port": 8013,
+                        "allow": {
+                            "self": {
+                                "key": "1322705f-cac1-4028-a2c8-1aee1235119c",
+                                "aspects": [
+                                    "source",
+                                    "scripts"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "config.plugin": {
+                    "pio.server": {
+                        "vhosts": {
+                            "pio-catalog.{{config.pio.hostname}}": {
+                                "target": "127.0.0.1:8102",
+                                "expose": true
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "devcomp": {
             "io.devcomp": {
                 "env": {
