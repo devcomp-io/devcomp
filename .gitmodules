@@ -1,0 +1,6 @@
+[submodule "services/devcomp/io.devcomp.learn"]
+	path = services/devcomp/io.devcomp.learn
+	url = git@github.com:devcomp-io/learn.devcomp.io.git
+[submodule "services/devcomp/io.devcomp.clone"]
+	path = services/devcomp/io.devcomp.clone
+	url = git@github.com:devcomp-io/clone.devcomp.io.git
