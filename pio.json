@@ -1,0 +1,93 @@
+{
+    "extends": [
+        "os.inception.profile/source/profile.proto.json"
+    ],
+    "uuid": "5ec4b801-f4fc-4f2f-8814-516a04e5512a",
+    "upstream": {
+        "packages": {
+            "os-inception": "../os.inception/services/*/*"
+        },
+        "catalogs": {
+            "os-inception": {
+                "uri": "http://pio-catalog.os-inception-i2a83.vm.cadorn.github.pinf.me:8013/catalog/io.pinf.pio/97fe66d65871486776ebe8a40a85620fc4f07103",
+                "headers": {
+                    "x-auth-code": "37a1043d-596a-4bd5-bf60-6d057b30dec2"
+                }
+            }
+        }
+    },
+    "mappings": {
+        "os.inception.profile": "os-inception/os.inception.profile"
+    },
+    "config": {
+        "pio": {
+            "domain": "vm.cadorn.github.pinf.me",
+            "namespace": "devcomp",
+            "keyPath": "~/.ssh/io.devcomp_rsa",
+            "servicesPath": "./services",
+            "serviceRepositoryUri": "https://s3.amazonaws.com/dev.genesis.pio.service.repository/{{config.pio.namespace}}"
+        },
+        "pio.vm": {
+            "user": "ubuntu",
+            "adapter": "aws",
+            "adapterSettings": {
+                "accessKeyId": "{{env.AWS_ACCESS_KEY}}",
+                "secretAccessKey": "{{env.AWS_SECRET_KEY}}",
+                "region": "us-east-1",
+                "ImageId": "ami-951524fc",
+                "InstanceType": "m1.small",
+                "BlockDeviceMappings": [
+                    {
+                        "DeviceName": "/dev/sda1",
+                        "Ebs": {
+                            "VolumeSize": "30"
+                        }
+                    }
+                ]
+            }
+        },
+        "pio.dns": {
+            "adapters": {
+                "dnsimple": {
+                    "email": "{{env.DNSIMPLE_EMAIL}}",
+                    "token": "{{env.DNSIMPLE_TOKEN}}"
+                }
+            }
+        }
+    },
+    "services": {
+        "devcomp": {
+            "io.devcomp": {
+                "env": {
+                    "PORT": 81
+                },
+                "config.plugin": {
+                    "pio.proxy": {
+                        "vhosts": {
+                            "devcomp.io": "127.0.0.1:81"
+                        }
+                    },
+                    "pio.server": {
+                        "vhosts": {
+                            "io-devcomp.{{config.pio.hostname}}": "127.0.0.1:81"
+                        }
+                    },
+                    "pio.dns": {
+                        "records": {
+                            "devcomp.io": {
+                                "domain": "devcomp.io",
+                                "type": "A",
+                                "data": "{{config['pio.vm'].ip}}"
+                            },
+                            "*.devcomp.io": {
+                                "domain": "devcomp.io",
+                                "type": "CNAME",
+                                "data": "devcomp.io"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
