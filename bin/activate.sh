@@ -27,6 +27,7 @@ alias snap='osascript $BASE_PATH/../services/devcomp/io.devcomp.osx/scripts/Laun
 
 
 # @see https://github.com/creationix/nvm
+. $HOME/.profile
 if hash nvm 2>/dev/null; then
 	echo "" > /dev/null
 else
