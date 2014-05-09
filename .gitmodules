@@ -1,9 +1,12 @@
 [submodule "services/devcomp/io.devcomp.learn"]
 	path = services/devcomp/io.devcomp.learn
-	url = git@github.com:devcomp-io/learn.devcomp.io.git
+url=git@github.com:devcomp-io/io.devcomp.learn.git
 [submodule "services/devcomp/io.devcomp.clone"]
 	path = services/devcomp/io.devcomp.clone
-	url = git@github.com:devcomp-io/clone.devcomp.io.git
+url=git@github.com:devcomp-io/io.devcomp.clone.git
 [submodule "services/devcomp/io.devcomp"]
 	path = services/devcomp/io.devcomp
-	url = git@github.com:devcomp-io/devcomp.io.git
+url=git@github.com:devcomp-io/io.devcomp.git
+[submodule "services/devcomp/io.devcomp.osx"]
+	path = services/devcomp/io.devcomp.osx
+	url = git@github.com:devcomp-io/io.devcomp.osx.git
