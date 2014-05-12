@@ -9,7 +9,7 @@
         },
         "catalogs": {
             "os-inception": {
-                "uri": "http://pio-catalog.os-inception-i2a83.vm.cadorn.github.pinf.me:8013/catalog/io.pinf.pio/ff75ad439b61812c4e5955295560715e835f87a8",
+                "uri": "http://pio-catalog.os-inception-i2a83-2.vm.cadorn.github.pinf.me:8013/catalog/io.pinf.pio/ea94d16e2277d3902089e73c8b91ae86a3a6f9d2",
                 "headers": {
                     "x-auth-code": "37a1043d-596a-4bd5-bf60-6d057b30dec2"
                 }
@@ -115,6 +115,9 @@
         },
         "devcomp": {
             "io.devcomp": {
+                "depends": [
+                    "io.pinf.server.www"
+                ],
                 "env": {
                     "PORT": 81
                 },
