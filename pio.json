@@ -9,7 +9,7 @@
         },
         "catalogs": {
             "os-inception": {
-                "uri": "http://pio-catalog.os-inception-i2a83-2.vm.cadorn.github.pinf.me:8013/catalog/io.pinf.pio/bd9cbe78e67e7ae249f53a2accb7461ba3817c34",
+                "uri": "http://pio-catalog.os-inception-i2a83-2.vm.cadorn.github.pinf.me:8013/catalog/io.pinf.pio/6f5c138682b86cc77af02f8d0a08059a1f40fef0",
                 "headers": {
                     "x-auth-code": "37a1043d-596a-4bd5-bf60-6d057b30dec2"
                 }
@@ -124,31 +124,13 @@
                 "config.plugin": {
                     "pio.proxy": {
                         "vhosts": {
-                            "devcomp.io": "127.0.0.1:81"
+                            "devcomp.io": "127.0.0.1:81",
+                            "io-devcomp.{{config.pio.hostname}}": "127.0.0.1:81"
                         }
                     },
                     "pio.server": {
                         "vhosts": {
                             "io-devcomp.{{config.pio.hostname}}": "127.0.0.1:81"
-                        }
-                    },
-                    "pio.dns": {
-                        "records": {
-                            "devcomp.io": {
-                                "domain": "devcomp.io",
-                                "type": "A",
-                                "data": "{{config['pio.vm'].ip}}"
-                            },
-                            "*.devcomp.io": {
-                                "domain": "devcomp.io",
-                                "type": "CNAME",
-                                "data": "devcomp.io"
-                            },
-                            "learn.devcomp.io": {
-                                "domain": "devcomp.io",
-                                "type": "CNAME",
-                                "data": "devcomp.io"
-                            }
                         }
                     }
                 }
@@ -176,7 +158,8 @@
                 "config.plugin": {
                     "pio.proxy": {
                         "vhosts": {
-                            "learn.devcomp.io": "127.0.0.1:82"
+                            "learn.devcomp.io": "127.0.0.1:82",
+                            "io-devcomp-learn.{{config.pio.hostname}}": "127.0.0.1:82"
                         }
                     },
                     "pio.server": {

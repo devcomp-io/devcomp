@@ -1,0 +1,29 @@
+{
+    "services": {
+        "devcomp": {
+            "io.devcomp": {
+                "config.plugin": {
+                    "pio.dns": {
+                        "records": {
+                            "devcomp.io": {
+                                "domain": "devcomp.io",
+                                "type": "A",
+                                "data": "{{config['pio.vm'].ip}}"
+                            },
+                            "*.devcomp.io": {
+                                "domain": "devcomp.io",
+                                "type": "CNAME",
+                                "data": "devcomp.io"
+                            },
+                            "learn.devcomp.io": {
+                                "domain": "devcomp.io",
+                                "type": "CNAME",
+                                "data": "devcomp.io"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
