@@ -1,6 +1,6 @@
 {
-  "name": "devcomp-seed",
-  "version": "0.0.0",
+  "name": "devcomp",
+  "version": "0.1.0",
   "private": true,
   "dependencies": {
     "smi.cli": "^0.11"

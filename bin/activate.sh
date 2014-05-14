@@ -21,24 +21,31 @@ echo "[pio] Switching environment ..."
 
 export PATH=$BASE_PATH:$PATH
 
+ulimit -Sn 8192
+
 # TODO: Relocate into plugin.
 alias snap='osascript $BASE_PATH/../services/devcomp/io.devcomp.osx/scripts/LaunchSnapzProX.scpt'
 # TODO: Add watch process that will upload screenshot once saved.
 
 
-# @see https://github.com/creationix/nvm
-. $HOME/.profile
-if hash nvm 2>/dev/null; then
+if hash node 2>/dev/null; then
 	echo "" > /dev/null
 else
-	curl https://raw.githubusercontent.com/creationix/nvm/v0.6.1/install.sh | sh
+	# @see https://github.com/creationix/nvm
+	. $HOME/.profile
+	if hash nvm 2>/dev/null; then
+		echo "nvm: $(which nvm) ($(nvm --version))"
+	else
+		# TODO: Ask user before installing nvm.
+		echo "Installing nvm ..."
+		curl https://raw.githubusercontent.com/creationix/nvm/v0.6.1/install.sh | sh
+	fi
+	. $HOME/.profile
+	nvm use 0.10
 fi
-. $HOME/.profile
-nvm use 0.10
-which node
-node -v
-which npm
-npm -v
+echo "node: $(which node) ($(node -v))"
+echo "npm: $(which npm) ($(npm -v))"
+
 
 # @see http://www.cyberciti.biz/tips/howto-linux-unix-bash-shell-setup-prompt.html
 # @see http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/x329.html

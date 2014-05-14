@@ -9,7 +9,7 @@
         },
         "catalogs": {
             "os-inception": {
-                "uri": "http://pio-catalog.os-inception-i2a83-2.vm.cadorn.github.pinf.me:8013/catalog/io.pinf.pio/ea94d16e2277d3902089e73c8b91ae86a3a6f9d2",
+                "uri": "http://pio-catalog.os-inception-i2a83-2.vm.cadorn.github.pinf.me:8013/catalog/io.pinf.pio/bd9cbe78e67e7ae249f53a2accb7461ba3817c34",
                 "headers": {
                     "x-auth-code": "37a1043d-596a-4bd5-bf60-6d057b30dec2"
                 }
@@ -143,7 +143,45 @@
                                 "domain": "devcomp.io",
                                 "type": "CNAME",
                                 "data": "devcomp.io"
+                            },
+                            "learn.devcomp.io": {
+                                "domain": "devcomp.io",
+                                "type": "CNAME",
+                                "data": "devcomp.io"
                             }
+                        }
+                    }
+                }
+            },
+            "io.devcomp.learn": {
+                "depends": [
+                    "io.pinf.server.www"
+                ],
+                "env": {
+                    "PORT": 82
+                },
+                "config": {
+                    "www": {
+                        "extends": [
+                            "127.0.0.1:8103",
+                            {
+                                "host": "127.0.0.1:8105",
+                                "theme": "github.com~almasaeed2010~AdminLTE"
+                            },
+                            "127.0.0.1:8106",
+                            "127.0.0.1:8104"
+                        ]
+                    }
+                },
+                "config.plugin": {
+                    "pio.proxy": {
+                        "vhosts": {
+                            "learn.devcomp.io": "127.0.0.1:82"
+                        }
+                    },
+                    "pio.server": {
+                        "vhosts": {
+                            "io-devcomp-learn.{{config.pio.hostname}}": "127.0.0.1:82"
                         }
                     }
                 }
