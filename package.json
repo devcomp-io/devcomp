@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "smi.cli": "^0.11"
+    "smi.cli": "0.x"
   },
   "config": {
     "smi.cli": {
