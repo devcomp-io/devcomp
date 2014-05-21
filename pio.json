@@ -25,14 +25,6 @@
             "namespace": "devcomp",
             "serviceRepositoryUri": "https://s3.amazonaws.com/dev.genesis.pio.service.repository/{{config.pio.namespace}}"
         },
-        "pio.dns": {
-            "adapters": {
-                "dnsimple": {
-                    "email": "{{env.DNSIMPLE_EMAIL}}",
-                    "token": "{{env.DNSIMPLE_TOKEN}}"
-                }
-            }
-        },
         "pio.catalog": {
             "catalogs": {
                 "io.devcomp": {
