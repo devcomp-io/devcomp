@@ -1,0 +1,8 @@
+
+The client tooling *should* run in an ubuntu vm on windows. I can try that next once the OSX install is working for others.
+
+Once an instance is deployed it can be accesses using any browser (so within ubuntu VM or from a windows browser).
+
+Getting the cli/dev workspaces running on windows native is going to take some time and I will need contributions to make that happen. Mainly due to symlinks and possibly path issues and other various minor things.
+
+One workaround I would entertain short term is a terminal proxy that we can run on windows to connect to the workspaces in the VM. You would then use the cli tooling from windows terminal but all commands would actually run on the VM.
