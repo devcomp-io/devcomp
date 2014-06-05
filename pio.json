@@ -9,7 +9,7 @@
         },
         "catalogs": {
             "os-inception": {
-                "uri": "http://assets.pinf.io/catalog/os-inception~dev",
+                "uri": "http://assets.pinf.io/catalog/os-inception~int",
                 "headers": {
                     "x-pio.catalog-key": "37a1043d-596a-4bd5-bf60-6d057b30dec2"
                 }
@@ -136,6 +136,51 @@
                     "pio.server": {
                         "vhosts": {
                             "io-devcomp-learn.{{config.pio.hostname}}": "127.0.0.1:82"
+                        }
+                    }
+                }
+            },
+            "io.devcomp.portal": {
+                "depends": [
+                    "io.pinf.server.www"
+                ],
+                "env": {
+                    "PORT": 84
+                },
+                "config": {
+                    "www": {
+                        "extends": [
+                            "127.0.0.1:8103",
+                            {
+                                "host": "127.0.0.1:8105",
+                                "theme": "github.com~almasaeed2010~AdminLTE"
+                            },
+                            "127.0.0.1:8106",
+                            "127.0.0.1:8104"
+                        ]
+                    }
+                },
+                "config.plugin": {
+                    "pio.server": {
+                        "vhosts": {
+                            "io-devcomp-portal.{{config.pio.hostname}}": "127.0.0.1:84"
+                        }
+                    }
+                }
+            }
+        },
+        "devcomp.tool": {
+            "io.devcomp.tool.terminal": {
+                "depends": [
+                    "io.pinf.server.www"
+                ],
+                "env": {
+                    "PORT": 83
+                },
+                "config.plugin": {
+                    "pio.server": {
+                        "vhosts": {
+                            "io-devcomp-tool-terminal.{{config.pio.hostname}}": "127.0.0.1:83"
                         }
                     }
                 }
