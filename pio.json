@@ -184,6 +184,9 @@
                         }
                     }
                 }
+            },
+            "io.devcomp.tool.firefox": {
+                "enabled": false                
             }
         }
     }

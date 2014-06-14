@@ -5,6 +5,9 @@
   "dependencies": {
     "smi.cli": "0.x"
   },
+  "mappings": {
+    "io.devcomp.tool.firefox": "./services/devcomp.tool/io.devcomp.tool.firefox"
+  },
   "config": {
     "smi.cli": {
     	"descriptorPath": "./pio.json",

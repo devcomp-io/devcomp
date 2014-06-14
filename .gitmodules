@@ -10,3 +10,9 @@ url=git@github.com:devcomp-io/io.devcomp.git
 [submodule "services/devcomp/io.devcomp.osx"]
 	path = services/devcomp/io.devcomp.osx
 	url = git@github.com:devcomp-io/io.devcomp.osx.git
+[submodule "services/devcomp.tool/io.devcomp.tool.firefox"]
+	path = services/devcomp.tool/io.devcomp.tool.firefox
+	url = git@github.com:devcomp-io/io.devcomp.tool.firefox.git
+[submodule "services/devcomp.tool/io.devcomp.tool.terminal"]
+	path = services/devcomp.tool/io.devcomp.tool.terminal
+	url = git@github.com:devcomp-io/io.devcomp.tool.terminal.git
