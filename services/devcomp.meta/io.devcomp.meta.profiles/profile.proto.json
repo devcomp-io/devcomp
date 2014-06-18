@@ -1,0 +1,47 @@
+{
+    "upstream": {
+        "packages": {
+            "io-devcomp": "../devcomp/services/*/*"
+        }
+    },
+    "mappings": {
+        "io-devcomp/io.devcomp": {
+            "location": "io-devcomp/io.devcomp",
+            "install": false
+        },
+        "io-devcomp/io.devcomp.learn": {
+            "location": "io-devcomp/io.devcomp.learn",
+            "install": false
+        },
+        "io-devcomp/io.devcomp.portal": {
+            "location": "io-devcomp/io.devcomp.portal",
+            "install": false
+        },
+        "io-devcomp/io.devcomp.tool.terminal": {
+            "location": "io-devcomp/io.devcomp.tool.terminal",
+            "install": false
+        },
+        "io-devcomp/io.devcomp.tool.firefox": {
+            "depends": [
+                "os-inception/smi.cli"
+            ],
+            "location": "io-devcomp/io.devcomp.tool.firefox"
+        },
+        "io-devcomp/myissues.collector.github": {
+            "location": "io-devcomp/myissues.collector.github",
+            "install": false
+        }
+    },
+    "services": {
+        "devcomp.meta": {
+            "io.devcomp.meta.profiles": null
+        },
+        "myissues": {
+            "myissues.collector.github": {
+                "config": {
+                    "watch": null
+                }
+            }
+        }
+    }
+}

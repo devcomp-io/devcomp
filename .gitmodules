@@ -16,3 +16,9 @@ url=git@github.com:devcomp-io/io.devcomp.git
 [submodule "services/devcomp.tool/io.devcomp.tool.terminal"]
 	path = services/devcomp.tool/io.devcomp.tool.terminal
 	url = git@github.com:devcomp-io/io.devcomp.tool.terminal.git
+[submodule "services/devcomp/io.devcomp.portal"]
+	path = services/devcomp/io.devcomp.portal
+	url = git@github.com:devcomp-io/io.devcomp.portal.git
+[submodule "services/myissues/myissues.collector.github"]
+	path = services/myissues/myissues.collector.github
+	url = git@github.com:myissues/myissues.collector.github.git

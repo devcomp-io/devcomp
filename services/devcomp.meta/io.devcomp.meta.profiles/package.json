@@ -1,0 +1,10 @@
+{
+  "name": "io.devcomp.meta.profiles",
+  "version": "0.0.0",
+  "private": true,
+  "config": {
+    "pio.deploy.converter": {
+        "name": "nodejs-lib"
+    }
+  }
+}

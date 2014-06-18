@@ -30,7 +30,10 @@
                 "io.devcomp": {
                     "uuid": "c352b2b8-d9f5-4da3-99af-8452a4e0c568",
                     "services": [
-                        "devcomp/*"
+                        "devcomp/*",
+                        "devcomp.tool/*",
+                        "devcomp.meta/*",
+                        "myissues/*"
                     ],
                     "config": {
                         "pio": {
@@ -82,6 +85,42 @@
                         }
                     }
                 }
+            }
+        },
+        "1-io.pinf": {
+            "io.pinf.server.auth": {
+                "config": {
+                    "passport": {
+                        "github": {
+                            "configUrl": "",
+                            "clientID": "",
+                            "clientSecret": "",
+                            "callbackURL": "http://{{config.pio.hostname}}/login/github",
+                            "scope": ""
+                        }
+                    },
+                    "groups": {
+                        "owners": {
+                            "role": "OWNER",
+                            "inherits": "https://github.com/orgs/devcomp-io/teams/owners"
+                        },
+                        "admin": {
+                            "role": "CORE-CONTRIBUTOR",
+                            "inherits": "https://github.com/orgs/devcomp-io/teams/core-contributors"
+                        },
+                        "public": {
+                            "role": "PUBLIC",
+                            "inherits": "https://github.com/*"
+                        }
+                    }
+                }
+            }
+        },
+        "devcomp.meta": {
+            "io.devcomp.meta.profiles": {
+                "depends": [
+                    "pio.postdeploy"
+                ]
             }
         },
         "devcomp": {
@@ -186,8 +225,40 @@
                 }
             },
             "io.devcomp.tool.firefox": {
-                "enabled": false                
+                "depends": [
+                    "io.pinf.server.www"
+                ]
+            }
+        },
+        "myissues": {
+            "myissues.collector.github": {
+                "depends": [
+                    "pio.postdeploy"
+                ],
+                "env": {
+                    "PORT": 85
+                },
+                "config": {
+                    "memcachedHost": "127.0.0.1:11211",
+                    "rethinkdbHost": "127.0.0.1:28015",
+                    "watch": {
+                        "organizations": {
+                            "pinf-io": true,
+                            "devcomp-io": true
+                        }
+                    }
+                },
+                "config.plugin": {
+                    "pio.server": {
+                        "vhosts": {
+                            "myissues-collector-github.{{config.pio.hostname}}": "127.0.0.1:85"
+                        }
+                    }
+                }
             }
         }
-    }
+    },
+    "overrides": [
+        "{{env.PIO_PROFILE_PATH}}"
+    ]
 }
