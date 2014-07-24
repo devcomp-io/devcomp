@@ -1,33 +1,49 @@
 {
     "upstream": {
         "packages": {
-            "io-devcomp": "../devcomp/services/*/*"
+            "io-devcomp": "../devcomp/services/*/*",
+            "os-inception": "../os.inception/services/*/*"
         }
     },
     "mappings": {
         "io-devcomp/io.devcomp": {
+            "depends": [
+                "os-inception/io.pinf.server.www"
+            ],
             "location": "io-devcomp/io.devcomp",
             "install": false
         },
         "io-devcomp/io.devcomp.learn": {
+            "depends": [
+                "os-inception/io.pinf.server.www"
+            ],
             "location": "io-devcomp/io.devcomp.learn",
             "install": false
         },
         "io-devcomp/io.devcomp.portal": {
+            "depends": [
+                "os-inception/io.pinf.server.www"
+            ],
             "location": "io-devcomp/io.devcomp.portal",
             "install": false
         },
         "io-devcomp/io.devcomp.tool.terminal": {
+            "depends": [
+                "os-inception/io.pinf.server.www"
+            ],
             "location": "io-devcomp/io.devcomp.tool.terminal",
             "install": false
         },
         "io-devcomp/io.devcomp.tool.firefox": {
             "depends": [
-                "os-inception/smi.cli"
+                "os-inception/io.pinf.server.www"
             ],
             "location": "io-devcomp/io.devcomp.tool.firefox"
         },
         "io-devcomp/myissues.collector.github": {
+            "depends": [
+                "os-inception/io.pinf.server.www"
+            ],
             "location": "io-devcomp/myissues.collector.github",
             "install": false
         }

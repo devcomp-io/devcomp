@@ -9,7 +9,7 @@
         },
         "catalogs": {
             "os-inception": {
-                "uri": "http://assets.pinf.io/catalog/os-inception~0",
+                "uri": "http://pio-catalog.os-inception-iae5f554-5.vm.cadorn.github.pinf.me:8013/catalog/io.pinf.pio/97c07c7283cdfac1c96c89f23b01ccf8227e1fd4",
                 "headers": {
                     "x-pio.catalog-key": "37a1043d-596a-4bd5-bf60-6d057b30dec2"
                 }
@@ -55,6 +55,13 @@
     },
     "services": {
         "0-pio": {
+            "pio.server": {
+                "config": {
+                    "adminSubdomain": "io-devcomp-portal",
+                    "authorizedSessionUrl": "http://{{config.pio.hostname}}/user/session/authorized",
+                    "logoutSessionUrl": "http://{{config.pio.hostname}}/logout"
+                }
+            },
             "pio.catalog": {
                 "env": {
                     "PORT": "8102",
@@ -112,7 +119,8 @@
                             "role": "PUBLIC",
                             "inherits": "https://github.com/*"
                         }
-                    }
+                    },
+                    "loggedInRedirect": "http://io-devcomp-portal.{{config.pio.hostname}}:8013/"
                 }
             }
         },
@@ -233,7 +241,7 @@
         "myissues": {
             "myissues.collector.github": {
                 "depends": [
-                    "pio.postdeploy"
+                    "io.pinf.server.www"
                 ],
                 "env": {
                     "PORT": 85
