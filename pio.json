@@ -195,6 +195,8 @@
                     "PORT": 84
                 },
                 "config": {
+                    "memcachedHost": "127.0.0.1:11211",
+                    "rethinkdbHost": "127.0.0.1:28015",
                     "www": {
                         "extends": [
                             "127.0.0.1:8103",
