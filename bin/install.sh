@@ -41,6 +41,7 @@ fi
 
 
 
+# TODO: Enable debug mode if `DEBUG` env var contains `smi`.
 bin/smi install
 
 rm bin/pio-ensure-credentials || true

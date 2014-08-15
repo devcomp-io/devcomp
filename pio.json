@@ -9,7 +9,7 @@
         },
         "catalogs": {
             "os-inception": {
-                "uri": "http://pio-catalog.os-inception-iae5f554-5.vm.cadorn.github.pinf.me:8013/catalog/io.pinf.pio/97c07c7283cdfac1c96c89f23b01ccf8227e1fd4",
+                "uri": "http://pio-catalog.os-inception-iae5f554-5.vm.cadorn.github.pinf.me:8013/catalog/io.pinf.pio/e94b3e8bbb29291251e595b874e602a9ade048dd",
                 "headers": {
                     "x-pio.catalog-key": "37a1043d-596a-4bd5-bf60-6d057b30dec2"
                 }
@@ -17,7 +17,13 @@
         }
     },
     "mappings": {
-        "os.inception.profile": "os-inception/os.inception.profile"
+        "os.inception.profile": "os-inception/os.inception.profile",
+        "io.devcomp.tool.firefox": {
+            "depends": [
+                "os-inception/smi.cli"
+            ],
+            "location": "./services/devcomp.tool/io.devcomp.tool.firefox"
+        }        
     },
     "config": {
         "pio": {

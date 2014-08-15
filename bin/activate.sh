@@ -17,7 +17,7 @@ echo "[pio] Switching environment ..."
 # TODO: Make all this configurable
 
 
-export PATH=$BASE_PATH:$PATH
+export PATH="$BASE_PATH:$PATH"
 
 ulimit -Sn 8192
 
@@ -31,7 +31,11 @@ if hash node 2>/dev/null; then
 	echo "" > /dev/null
 else
 	# @see https://github.com/creationix/nvm
-	. $HOME/.profile
+	if [ -f "$HOME/.profile" ]; then
+		. "$HOME/.profile"
+	else
+		. "$HOME/.bash_profile"
+	fi
 	if hash nvm 2>/dev/null; then
 		echo "nvm: $(which nvm) ($(nvm --version))"
 	else
@@ -39,7 +43,11 @@ else
 		echo "Installing nvm ..."
 		curl https://raw.githubusercontent.com/creationix/nvm/v0.6.1/install.sh | sh
 	fi
-	. $HOME/.profile
+	if [ -f "$HOME/.profile" ]; then
+		. "$HOME/.profile"
+	else
+		. "$HOME/.bash_profile"
+	fi
 	nvm use 0.10
 fi
 echo "node: $(which node) ($(node -v))"
@@ -62,5 +70,5 @@ else
 fi
 
 if [ -f "$BASE_PATH/../../$(basename $(dirname $BASE_PATH)).activate.sh" ]; then
-	. $BASE_PATH/../../$(basename $(dirname $BASE_PATH)).activate.sh
+	. "$BASE_PATH/../../$(basename $(dirname $BASE_PATH)).activate.sh"
 fi
