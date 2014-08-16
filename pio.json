@@ -120,10 +120,6 @@
                         "admin": {
                             "role": "CORE-CONTRIBUTOR",
                             "inherits": "https://github.com/orgs/devcomp-io/teams/core-contributors"
-                        },
-                        "public": {
-                            "role": "PUBLIC",
-                            "inherits": "https://github.com/*"
                         }
                     },
                     "loggedInRedirect": "http://io-devcomp-portal.{{config.pio.hostname}}:8013/"
