@@ -13,6 +13,7 @@ BASE_PATH="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
 
 # TODO: Relocate this into dedicated service.
+
 echo "[pio] Switching environment ..."
 # TODO: Make all this configurable
 
@@ -57,7 +58,10 @@ echo "npm: $(which npm) ($(npm -v))"
 
 # @see http://www.cyberciti.biz/tips/howto-linux-unix-bash-shell-setup-prompt.html
 # @see http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/x329.html
-PS1="\[\033[1;34m\]\[\033[47m\](OS)\[\033[0m\] \[\033[1;35m\]$(basename $(dirname $BASE_PATH))\[\033[0m\] \[\033[33m\]\u\[\033[1;33m\]$\[\033[0m\] "
+function parse_git_branch {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
+}
+PS1="\[\033[1;34m\]\[\033[47m\](OS)\[\033[0m\] \[\033[1;35m\]$(basename "$(dirname "$BASE_PATH")")\[\033[0m\][$(parse_git_branch)] \[\033[33m\]\u\[\033[1;33m\]$\[\033[0m\] "
 
 
 
@@ -68,6 +72,7 @@ if [ ! -d "node_modules" ]; then
 else
 	bin/pio-ensure-credentials
 fi
+
 
 if [ -f "$BASE_PATH/../../$(basename $(dirname $BASE_PATH)).activate.sh" ]; then
 	. "$BASE_PATH/../../$(basename $(dirname $BASE_PATH)).activate.sh"

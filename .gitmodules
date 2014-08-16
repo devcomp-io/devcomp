@@ -22,3 +22,6 @@ url=git@github.com:devcomp-io/io.devcomp.git
 [submodule "services/myissues/myissues.collector.github"]
 	path = services/myissues/myissues.collector.github
 	url = git@github.com:myissues/myissues.collector.github.git
+[submodule "services/devcomp.client/devcomp.client.firefox.extension"]
+	path = services/devcomp.client/devcomp.client.firefox.extension
+	url = git@github.com:devcomp/devcomp-client-firefox-extension.git
