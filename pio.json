@@ -9,7 +9,7 @@
         },
         "catalogs": {
             "os-inception": {
-                "uri": "http://pio-catalog.os-inception-iae5f554-5.vm.cadorn.github.pinf.me:8013/catalog/io.pinf.pio/10d281ab26ff0b43f0ad847ffd24e5328d6e532b",
+                "uri": "http://pio-catalog.os-inception-iae5f554-5.vm.cadorn.github.pinf.me:8013/catalog/io.pinf.pio/9325bc14ed687ac95b3b39a2b0fe33ab534e90a9",
                 "headers": {
                     "x-pio.catalog-key": "37a1043d-596a-4bd5-bf60-6d057b30dec2"
                 }
@@ -207,7 +207,12 @@
                                 "theme": "github.com~almasaeed2010~AdminLTE"
                             },
                             "127.0.0.1:8106",
-                            "127.0.0.1:8104"
+                            {
+                                "host": "127.0.0.1:8104",
+                                "headers": {
+                                    "x-session-url": "$x-session-url"
+                                }
+                            }
                         ]
                     }
                 },
