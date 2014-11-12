@@ -34,6 +34,20 @@
             "location": "io-devcomp/io.devcomp.tool.terminal",
             "install": false
         },
+        "io-devcomp/io.devcomp.tool.stats": {
+            "depends": [
+                "os-inception/io.pinf.server.www"
+            ],
+            "location": "io-devcomp/io.devcomp.tool.stats",
+            "install": false
+        },
+        "io-devcomp/io.devcomp.tool.test": {
+            "depends": [
+                "os-inception/io.pinf.server.www"
+            ],
+            "location": "io-devcomp/io.devcomp.tool.test",
+            "install": false
+        },
         "io-devcomp/io.devcomp.tool.firefox": {
             "depends": [
                 "os-inception/io.pinf.server.www"
