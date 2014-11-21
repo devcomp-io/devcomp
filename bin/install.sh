@@ -20,7 +20,10 @@ cd $BASE_PATH
 
 # Only initialize once in the beginning.
 if [ ! -d "node_modules" ]; then
+	echo "Init submodules ..."
 	git submodule update --init --recursive --rebase
+else
+	echo "Skip init submodules."
 fi
 
 

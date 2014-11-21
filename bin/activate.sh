@@ -70,6 +70,7 @@ if [ ! -d "node_modules" ]; then
 	echo "ACTION: Run 'bin/install.sh' next!"
 	echo ""
 else
+	export PIO_PROFILE_ENDPOINT="https://s3-us-west-1.amazonaws.com/dev.genesis.pio.profile.registry"
 	bin/pio-ensure-credentials
 fi
 
