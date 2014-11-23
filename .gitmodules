@@ -31,3 +31,6 @@ url=git@github.com:devcomp-io/io.devcomp.git
 [submodule "services/devcomp.tool/io.devcomp.tool.test"]
 	path = services/devcomp.tool/io.devcomp.tool.test
 	url = git@github.com:devcomp-io/io.devcomp.tool.test.git
+[submodule "services/devcomp.tool/io.devcomp.tool.process"]
+	path = services/devcomp.tool/io.devcomp.tool.process
+	url = git@github.com:devcomp-io/io.devcomp.tool.process.git
