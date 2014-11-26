@@ -41,6 +41,17 @@
             "location": "io-devcomp/io.devcomp.tool.stats",
             "install": false
         },
+        "io-devcomp/io.devcomp.tool.process": {
+            "depends": [
+                "os-inception/io.pinf.server.www"
+            ],
+            "location": "io-devcomp/io.devcomp.tool.process",
+            "install": false
+        },
+        "io-devcomp/io.devcomp.tool.ports": {
+            "location": "io-devcomp/io.devcomp.tool.ports",
+            "install": false
+        },
         "io-devcomp/io.devcomp.tool.test": {
             "depends": [
                 "os-inception/io.pinf.server.www"
@@ -59,6 +70,13 @@
                 "os-inception/io.pinf.server.www"
             ],
             "location": "io-devcomp/myissues.collector.github",
+            "install": false
+        },
+        "io-devcomp/myissues.browser": {
+            "depends": [
+                "os-inception/io.pinf.server.www"
+            ],
+            "location": "io-devcomp/myissues.browser",
             "install": false
         }
     },

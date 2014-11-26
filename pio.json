@@ -286,6 +286,42 @@
                     }
                 }
             },
+            "io.devcomp.tool.process": {
+                "depends": [
+                    "io.pinf.server.www"
+                ],
+                "env": {
+                    "PORT": 88
+                },
+                "config": {
+                    "internalStatusAuthToken": "241be011-5f7c-4187-9daf-7fd97cdbf6f2"
+                },
+                "config.plugin": {
+                    "pio.server": {
+                        "vhosts": {
+                            "io-devcomp-tool-process.{{config.pio.hostname}}": "127.0.0.1:88"
+                        }
+                    },
+                    "io.pinf.server.uptime": {
+                        "checks": {
+                            "/_internal_status": {
+                                "url": "http://127.0.0.1:88/_internal_status",
+                                "pollerParams": {
+                                    "match": "",
+                                    "http_options": {
+                                        "x-auth-token": "241be011-5f7c-4187-9daf-7fd97cdbf6f2"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "io.devcomp.tool.ports": {
+                "depends": [
+                    "pio.postdeploy"
+                ]
+            },
             "io.devcomp.tool.test": {
                 "depends": [
                     "io.pinf.server.www"
@@ -345,6 +381,41 @@
                     "pio.server": {
                         "vhosts": {
                             "myissues-collector-github.{{config.pio.hostname}}": "127.0.0.1:85"
+                        }
+                    }
+                }
+            },
+            "myissues.browser": {
+                "depends": [
+                    "io.pinf.server.www"
+                ],
+                "env": {
+                    "PORT": 89
+                },
+                "config": {
+                    "memcachedHost": "127.0.0.1:11211",
+                    "rethinkdbHost": "127.0.0.1:28015",
+                    "www": {
+                        "extends": [
+                            "127.0.0.1:8103",
+                            {
+                                "host": "127.0.0.1:8105",
+                                "theme": "github.com~almasaeed2010~AdminLTE"
+                            },
+                            "127.0.0.1:8106",
+                            {
+                                "host": "127.0.0.1:8104",
+                                "headers": {
+                                    "x-session-url": "$x-session-url"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "config.plugin": {
+                    "pio.server": {
+                        "vhosts": {
+                            "myissues-browser.{{config.pio.hostname}}": "127.0.0.1:89"
                         }
                     }
                 }
