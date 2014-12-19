@@ -294,7 +294,21 @@
                     "PORT": 88
                 },
                 "config": {
-                    "internalStatusAuthToken": "241be011-5f7c-4187-9daf-7fd97cdbf6f2"
+                    "internalStatusAuthToken": "241be011-5f7c-4187-9daf-7fd97cdbf6f2",
+                    "alerts": {
+                        "*": {
+                            "%CPU-limit": {
+                                "type": "limit",
+                                "field": "%CPU",
+                                "value": "50"
+                            },
+                            "%MEM-limit": {
+                                "type": "limit",
+                                "field": "%MEM",
+                                "value": "50"
+                            }
+                        }
+                    }
                 },
                 "config.plugin": {
                     "pio.server": {
