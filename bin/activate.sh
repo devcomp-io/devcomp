@@ -34,7 +34,7 @@ else
 	# @see https://github.com/creationix/nvm
 	if [ -f "$HOME/.profile" ]; then
 		. "$HOME/.profile"
-	else
+	elif [ -f "$HOME/.bash_profile" ]; then
 		. "$HOME/.bash_profile"
 	fi
 	if hash nvm 2>/dev/null; then
@@ -46,7 +46,7 @@ else
 	fi
 	if [ -f "$HOME/.profile" ]; then
 		. "$HOME/.profile"
-	else
+	elif [ -f "$HOME/.bash_profile" ]; then
 		. "$HOME/.bash_profile"
 	fi
 	nvm use 0.10

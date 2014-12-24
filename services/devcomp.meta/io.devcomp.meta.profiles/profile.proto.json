@@ -90,6 +90,13 @@
                     "watch": null
                 }
             }
+        },
+        "1-io.pinf": {            
+            "io.pinf.server.email": {
+                "config": {
+                    "smtp": null
+                }
+            }
         }
     }
 }

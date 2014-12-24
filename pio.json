@@ -9,7 +9,7 @@
         },
         "catalogs": {
             "os-inception": {
-                "uri": "http://pio-catalog.os-inception-iae5f554-5.vm.cadorn.github.pinf.me:8013/catalog/io.pinf.pio/678fc0ebb346e7180316953cd0996c0d2cc54987",
+                "uri": "http://pio-catalog.os-inception-iae5f554-5.vm.cadorn.github.pinf.me:8013/catalog/io.pinf.pio/f6dafb0424ae23326b841b548cbd8764ead68ed3",
                 "headers": {
                     "x-pio.catalog-key": "37a1043d-596a-4bd5-bf60-6d057b30dec2"
                 }
@@ -295,6 +295,9 @@
                 },
                 "config": {
                     "internalStatusAuthToken": "241be011-5f7c-4187-9daf-7fd97cdbf6f2",
+                    "email": {
+                        "host": "127.0.0.1:8120"
+                    },
                     "alerts": {
                         "*": {
                             "%CPU-limit": {
