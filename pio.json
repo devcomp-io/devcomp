@@ -9,7 +9,7 @@
         },
         "catalogs": {
             "os-inception": {
-                "uri": "http://pio-catalog.os-inception-iae5f554-5.vm.cadorn.github.pinf.me:8013/catalog/io.pinf.pio/f6dafb0424ae23326b841b548cbd8764ead68ed3",
+                "uri": "http://pio-catalog.os-inception-iae5f554-5.vm.cadorn.github.pinf.me:8013/catalog/io.pinf.pio/c18699deebcf8d1a7ddc0457a7fe34f2280d9073",
                 "headers": {
                     "x-pio.catalog-key": "37a1043d-596a-4bd5-bf60-6d057b30dec2"
                 }
@@ -39,7 +39,8 @@
                         "devcomp/*",
                         "devcomp.tool/*",
                         "devcomp.meta/*",
-                        "myissues/*"
+                        "myissues/*",
+                        "overlays/*"
                     ],
                     "config": {
                         "pio": {
@@ -286,6 +287,301 @@
                     }
                 }
             },
+            "io.devcomp.tool.roundcube": {
+                "enabled": false,
+                "depends": [
+                    "io.pinf.server.www"
+                ],
+                "env": {
+                    "PORT": 90
+                },
+                "config.plugin": {
+                    "pio.server": {
+                        "vhosts": {
+                            "io-devcomp-tool-roundcube.{{config.pio.hostname}}": "127.0.0.1:90"
+                        }
+                    }
+                }
+            },
+            "io.devcomp.tool.twitter": {
+                "depends": [
+                    "io.pinf.server.www"
+                ],
+                "env": {
+                    "PORT": 91
+                },
+                "config": {
+                    "internalStatusAuthToken": "337b0c76-d470-4498-801c-c2b70d913409"
+                },
+                "config.plugin": {
+                    "pio.server": {
+                        "vhosts": {
+                            "io-devcomp-tool-twitter.{{config.pio.hostname}}": "127.0.0.1:91"
+                        }
+                    },
+                    "io.pinf.server.uptime": {
+                        "checks": {
+                            "/_internal_status": {
+                                "url": "http://127.0.0.1:91/_internal_status",
+                                "pollerParams": {
+                                    "match": "",
+                                    "http_options": {
+                                        "x-auth-token": "337b0c76-d470-4498-801c-c2b70d913409"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "io.devcomp.tool.release": {
+                "depends": [
+                    "io.pinf.server.www"
+                ],
+                "env": {
+                    "PORT": 92
+                },
+                "config": {
+                    "internalStatusAuthToken": "7480f92d-4c34-43e1-bd4a-8ebc84fa7a62"
+                },
+                "config.plugin": {
+                    "pio.server": {
+                        "vhosts": {
+                            "io-devcomp-tool-release.{{config.pio.hostname}}": "127.0.0.1:92"
+                        }
+                    },
+                    "io.pinf.server.uptime": {
+                        "checks": {
+                            "/_internal_status": {
+                                "url": "http://127.0.0.1:92/_internal_status",
+                                "pollerParams": {
+                                    "match": "",
+                                    "http_options": {
+                                        "x-auth-token": "7480f92d-4c34-43e1-bd4a-8ebc84fa7a62"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "io.devcomp.tool.etherpad": {
+                "depends": [
+                    "io.pinf.server.www"
+                ],
+                "env": {
+                    "PORT": 93
+                },
+                "config": {
+                    "internalStatusAuthToken": "aa2886d2-d188-4902-bf5d-ab5ede128c87"
+                },
+                "config.plugin": {
+                    "pio.server": {
+                        "vhosts": {
+                            "io-devcomp-tool-etherpad.{{config.pio.hostname}}": "127.0.0.1:93"
+                        }
+                    },
+                    "io.pinf.server.uptime": {
+                        "checks": {
+                            "/_internal_status": {
+                                "url": "http://127.0.0.1:93/_internal_status",
+                                "pollerParams": {
+                                    "match": "",
+                                    "http_options": {
+                                        "x-auth-token": "aa2886d2-d188-4902-bf5d-ab5ede128c87"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "io.devcomp.tool.backup": {
+                "depends": [
+                    "io.pinf.server.www"
+                ],
+                "env": {
+                    "PORT": 94
+                },
+                "config": {
+                    "internalStatusAuthToken": "ade692a1-62a8-460b-b9c7-2de88af4b9a5"
+                },
+                "config.plugin": {
+                    "pio.server": {
+                        "vhosts": {
+                            "io-devcomp-tool-backup.{{config.pio.hostname}}": "127.0.0.1:94"
+                        }
+                    },
+                    "io.pinf.server.uptime": {
+                        "checks": {
+                            "/_internal_status": {
+                                "url": "http://127.0.0.1:94/_internal_status",
+                                "pollerParams": {
+                                    "match": "",
+                                    "http_options": {
+                                        "x-auth-token": "ade692a1-62a8-460b-b9c7-2de88af4b9a5"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "io.devcomp.tool.datastore": {
+                "depends": [
+                    "io.pinf.server.www"
+                ],
+                "env": {
+                    "PORT": 95
+                },
+                "config": {
+                    "internalStatusAuthToken": "82068639-3717-43a5-987c-116a585bc835"
+                },
+                "config.plugin": {
+                    "pio.server": {
+                        "vhosts": {
+                            "io-devcomp-tool-database.{{config.pio.hostname}}": "127.0.0.1:95"
+                        }
+                    },
+                    "io.pinf.server.uptime": {
+                        "checks": {
+                            "/_internal_status": {
+                                "url": "http://127.0.0.1:95/_internal_status",
+                                "pollerParams": {
+                                    "match": "",
+                                    "http_options": {
+                                        "x-auth-token": "82068639-3717-43a5-987c-116a585bc835"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "io.devcomp.tool.notes": {
+                "depends": [
+                    "io.pinf.server.www"
+                ],
+                "env": {
+                    "PORT": 96
+                },
+                "config": {
+                    "internalStatusAuthToken": "50a220f6-ff3e-405b-9a4a-91392fea796b"
+                },
+                "config.plugin": {
+                    "pio.server": {
+                        "vhosts": {
+                            "io-devcomp-tool-notes.{{config.pio.hostname}}": "127.0.0.1:96"
+                        }
+                    },
+                    "io.pinf.server.uptime": {
+                        "checks": {
+                            "/_internal_status": {
+                                "url": "http://127.0.0.1:96/_internal_status",
+                                "pollerParams": {
+                                    "match": "",
+                                    "http_options": {
+                                        "x-auth-token": "50a220f6-ff3e-405b-9a4a-91392fea796b"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "io.devcomp.tool.editor": {
+                "depends": [
+                    "io.pinf.server.www"
+                ],
+                "env": {
+                    "PORT": 97
+                },
+                "config": {
+                    "internalStatusAuthToken": "75082125-e56f-4eb8-a827-929dd03a0464"
+                },
+                "config.plugin": {
+                    "pio.server": {
+                        "vhosts": {
+                            "io-devcomp-tool-editor.{{config.pio.hostname}}": "127.0.0.1:97"
+                        }
+                    },
+                    "io.pinf.server.uptime": {
+                        "checks": {
+                            "/_internal_status": {
+                                "url": "http://127.0.0.1:97/_internal_status",
+                                "pollerParams": {
+                                    "match": "",
+                                    "http_options": {
+                                        "x-auth-token": "75082125-e56f-4eb8-a827-929dd03a0464"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "io.devcomp.tool.tree": {
+                "depends": [
+                    "io.pinf.server.www"
+                ],
+                "env": {
+                    "PORT": 98
+                },
+                "config": {
+                    "internalStatusAuthToken": "80858f62-bb0d-4dbb-ae7b-9ce738180831"
+                },
+                "config.plugin": {
+                    "pio.server": {
+                        "vhosts": {
+                            "io-devcomp-tool-tree.{{config.pio.hostname}}": "127.0.0.1:98"
+                        }
+                    },
+                    "io.pinf.server.uptime": {
+                        "checks": {
+                            "/_internal_status": {
+                                "url": "http://127.0.0.1:98/_internal_status",
+                                "pollerParams": {
+                                    "match": "",
+                                    "http_options": {
+                                        "x-auth-token": "80858f62-bb0d-4dbb-ae7b-9ce738180831"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "io.devcomp.tool.ide": {
+                "depends": [
+                    "io.pinf.server.www"
+                ],
+                "env": {
+                    "PORT": 99
+                },
+                "config": {
+                    "internalStatusAuthToken": "77eebf18-4144-4843-b27f-67c37ecaa8d0"
+                },
+                "config.plugin": {
+                    "pio.server": {
+                        "vhosts": {
+                            "io-devcomp-tool-ide.{{config.pio.hostname}}": "127.0.0.1:99"
+                        }
+                    },
+                    "io.pinf.server.uptime": {
+                        "checks": {
+                            "/_internal_status": {
+                                "url": "http://127.0.0.1:99/_internal_status",
+                                "pollerParams": {
+                                    "match": "",
+                                    "http_options": {
+                                        "x-auth-token": "77eebf18-4144-4843-b27f-67c37ecaa8d0"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "io.devcomp.tool.process": {
                 "depends": [
                     "io.pinf.server.www"
@@ -376,6 +672,39 @@
                 ]
             }
         },
+        "overlays": {
+            "org.mozilla.addons": {
+                "depends": [
+                    "io.pinf.server.www"
+                ],
+                "env": {
+                    "PORT": 100
+                },
+                "config": {
+                    "internalStatusAuthToken": "99b0836a-86e5-475a-b70f-d31e370e3012"
+                },
+                "config.plugin": {
+                    "pio.server": {
+                        "vhosts": {
+                            "org-mozilla-addons.{{config.pio.hostname}}": "127.0.0.1:100"
+                        }
+                    },
+                    "io.pinf.server.uptime": {
+                        "checks": {
+                            "/_internal_status": {
+                                "url": "http://127.0.0.1:100/_internal_status",
+                                "pollerParams": {
+                                    "match": "",
+                                    "http_options": {
+                                        "x-auth-token": "99b0836a-86e5-475a-b70f-d31e370e3012"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "myissues": {
             "myissues.collector.github": {
                 "depends": [
@@ -439,7 +768,7 @@
             }
         }
     },
-    "overrides": [
+    "overlays": [
         "{{env.PIO_PROFILE_PATH}}"
     ]
 }

@@ -41,6 +41,73 @@
             "location": "io-devcomp/io.devcomp.tool.stats",
             "install": false
         },
+        "io-devcomp/io.devcomp.tool.twitter": {
+            "depends": [
+                "os-inception/io.pinf.server.www"
+            ],
+            "location": "io-devcomp/io.devcomp.tool.twitter",
+            "install": false
+        },
+        "io-devcomp/io.devcomp.tool.release": {
+            "depends": [
+                "os-inception/io.pinf.server.www"
+            ],
+            "location": "io-devcomp/io.devcomp.tool.release",
+            "install": false
+        },
+        "io-devcomp/io.devcomp.tool.etherpad": {
+            "depends": [
+                "os-inception/io.pinf.server.www"
+            ],
+            "location": "io-devcomp/io.devcomp.tool.etherpad",
+            "install": false
+        },
+        "io-devcomp/io.devcomp.tool.backup": {
+            "depends": [
+                "os-inception/io.pinf.server.www"
+            ],
+            "location": "io-devcomp/io.devcomp.tool.backup",
+            "install": false
+        },
+        "io-devcomp/io.devcomp.tool.datastore": {
+            "depends": [
+                "os-inception/io.pinf.server.www"
+            ],
+            "location": "io-devcomp/io.devcomp.tool.datastore",
+            "install": false
+        },
+        "io-devcomp/io.devcomp.tool.notes": {
+            "depends": [
+                "os-inception/io.pinf.server.www"
+            ],
+            "location": "io-devcomp/io.devcomp.tool.notes",
+            "install": false
+        },
+        "io-devcomp/io.devcomp.tool.editor": {
+            "depends": [
+                "os-inception/io.pinf.server.www"
+            ],
+            "location": "io-devcomp/io.devcomp.tool.editor",
+            "install": false
+        },
+        "io-devcomp/io.devcomp.tool.tree": {
+            "depends": [
+                "os-inception/io.pinf.server.www"
+            ],
+            "location": "io-devcomp/io.devcomp.tool.tree",
+            "install": false
+        },
+        "io-devcomp/io.devcomp.tool.ide": {
+            "depends": [
+                "os-inception/io.pinf.server.www"
+            ],
+            "location": "io-devcomp/io.devcomp.tool.ide",
+            "install": false
+        },        
+        "io-devcomp/io.devcomp.tool.roundcube": {
+            "location": "io-devcomp/io.devcomp.tool.roundcube",
+            "install": false
+        },
         "io-devcomp/io.devcomp.tool.process": {
             "depends": [
                 "os-inception/io.pinf.server.www"
@@ -58,6 +125,12 @@
             ],
             "location": "io-devcomp/io.devcomp.tool.test",
             "install": false
+        },
+        "io-devcomp/org.mozilla.addons": {
+            "depends": [
+                "os-inception/io.pinf.server.www"
+            ],
+            "location": "io-devcomp/org.mozilla.addons"
         },
         "io-devcomp/io.devcomp.tool.firefox": {
             "depends": [
