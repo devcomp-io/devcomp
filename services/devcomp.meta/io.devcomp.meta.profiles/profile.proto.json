@@ -104,10 +104,6 @@
             "location": "io-devcomp/io.devcomp.tool.ide",
             "install": false
         },        
-        "io-devcomp/io.devcomp.tool.roundcube": {
-            "location": "io-devcomp/io.devcomp.tool.roundcube",
-            "install": false
-        },
         "io-devcomp/io.devcomp.tool.process": {
             "depends": [
                 "os-inception/io.pinf.server.www"
