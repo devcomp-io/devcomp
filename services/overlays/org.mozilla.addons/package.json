@@ -12,6 +12,7 @@
   "upstream": {
     "packages": {
       "top": [
+        "../../../os-inception/*",
         "../../*",
         "../../../../*"
       ]
