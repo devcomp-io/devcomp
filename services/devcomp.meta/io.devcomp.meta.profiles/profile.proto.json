@@ -156,7 +156,12 @@
         "myissues": {
             "myissues.collector.github": {
                 "config": {
-                    "watch": null
+                    "watch": {
+                        "organizations": {
+                            "pinf-io": false,
+                            "devcomp-io": false
+                        }
+                    }
                 }
             }
         },

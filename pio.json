@@ -721,6 +721,16 @@
                             "pinf-io": true,
                             "devcomp-io": true
                         }
+                    },
+                    "ensure": {
+                        "labels": {
+                            "IMPORTANT": {
+                                "color": "eb6420"
+                            },
+                            "SECURITY": {
+                                "color": "fbca04"
+                            }
+                        }
                     }
                 },
                 "config.plugin": {
