@@ -27,5 +27,12 @@
     "pio.deploy.converter": {
       "name": "nodejs-server"
     }
+  },
+  "config.plugin": {
+    "io.pinf.server.firewidgets": {
+      "widgets": {
+        "datastore": "./widgets/datastore/*"
+      }
+    }
   }
 }

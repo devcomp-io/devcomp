@@ -9,7 +9,7 @@
         },
         "catalogs": {
             "os-inception": {
-                "uri": "http://pio-catalog.os-inception-iae5f554-5.vm.cadorn.github.pinf.me:8013/catalog/io.pinf.pio/a146951a2016a4f77493a5abcc9b7f631e5d7d0f",
+                "uri": "http://pio-catalog.os-inception-iae5f554-5.vm.cadorn.github.pinf.me:8013/catalog/io.pinf.pio/7c560a3fa40570fe86bd3a44e1c545af3f95dac6",
                 "headers": {
                     "x-pio.catalog-key": "37a1043d-596a-4bd5-bf60-6d057b30dec2"
                 }
@@ -234,6 +234,14 @@
                                         "x-auth-token": "f2d5af52-2d78-4145-ad89-4ccec7af91bf"
                                     }
                                 }
+                            }
+                        }
+                    },
+                    "io.devcomp.tool.datastore": {
+                        "datastores": {
+                            "rethinkdb": {
+                                "type": "rethinkdb",
+                                "dbname": "devcomp"
                             }
                         }
                     }
@@ -737,6 +745,14 @@
                     "pio.server": {
                         "vhosts": {
                             "myissues-collector-github.{{config.pio.hostname}}": "127.0.0.1:85"
+                        }
+                    },
+                    "io.devcomp.tool.datastore": {
+                        "datastores": {
+                            "rethinkdb": {
+                                "type": "rethinkdb",
+                                "dbname": "devcomp"
+                            }
                         }
                     }
                 }

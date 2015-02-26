@@ -1,0 +1,25 @@
+
+
+<select class="datastore-selector" id="datastore-selector">
+{{ for(var datastoreId in it.datastores) { }}
+	<option value="{{=datastoreId}}">{{=it.datastores[datastoreId].label}}</option>
+{{ } }}
+</select>
+
+
+<div id="datastore-viewer"></div>
+
+
+<style>
+
+#datastore-viewer {
+	width: 100%;
+	height: 800px;
+}
+
+.datastore-selector {
+	margin-bottom: 10px;
+}
+
+</style>
+
