@@ -130,7 +130,7 @@
         },
         "io-devcomp/io.devcomp.tool.firefox": {
             "depends": [
-                "os-inception/io.pinf.server.www"
+                "os-inception/smi.cli"
             ],
             "location": "io-devcomp/io.devcomp.tool.firefox"
         },
